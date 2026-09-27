@@ -255,3 +255,88 @@ class Demo
 }
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Program 9:
+Sort String Manually ?
+package demo;
+
+import java.util.Arrays;
+
+// Sort
+
+// silent
+//[e, i, l, n, s, t]
+class Demo
+{
+	public static void main(String[] args) {
+		String s1 = "silent";
+//		int len = s1.length();
+		
+		char[] ch = s1.toCharArray();
+		int len = ch.length;
+		
+		char temp;
+		for(int i=0;i<len;i++)
+		{
+			for(int j=i+1;j<len;j++)
+			{
+				if(ch[i]>ch[j])
+				{
+					temp=ch[i];
+					ch[i]=ch[j];
+					ch[j]=temp;
+				}
+			}
+		}
+		
+		System.out.println(ch);
+	}
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Program 10:
+package demo;
+
+import java.util.Arrays;
+
+//String Equality Checking (Manual) ?
+class Demo {
+	public static void main(String[] args) {
+		String s1 = "listen";
+		String s2 = "listen";
+
+		int s1Len = s1.length();
+		int s2Len = s2.length();
+
+		boolean check = StringEqualityCheck(s1, s2, s2Len, s1Len);
+		
+		if(check)
+			System.out.println("Equal");
+		else
+		System.out.println("Not Equal");
+	}
+
+	private static boolean StringEqualityCheck(String s1, String s2, int s2Len, int s1Len) {
+		
+		boolean isEqual=true;
+		
+		char[] arr1 = s1.toCharArray();
+		char[] arr2 = s2.toCharArray();
+		
+		if(s1Len!=s2Len)
+		{
+			isEqual= false;
+		}
+		else
+		{
+			for(int i=0;i<s1Len;i++)
+			{
+				if(arr1[i]!=arr2[i])
+				{
+					isEqual= false;
+				}
+			}
+		}
+		return isEqual;
+
+	}
+}
