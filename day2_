@@ -108,4 +108,26 @@ class Demo
 }
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  #Program 4:
+  #Program 4: Reverse Word in a String ?
+
+package demo;
+
+//Reverse Word in a String
+
+// ip : Hello World Java
+// op : Java World Hello
+
+class Demo
+{
+	public static void main(String[] args) {
+		String str = "Hello World Java";
+		String[] arr = str.split(" ");
+		
+		for(int i=arr.length-1;i>=0;i--)
+		{
+			System.out.print(arr[i]+" ");
+		}
+	}
+}
+
+
