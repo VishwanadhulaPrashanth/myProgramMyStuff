@@ -1,0 +1,111 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Program 1: Find Longest SubString Without Repeating ?
+  package demo;
+
+import java.util.HashSet;
+
+//Finding Longest Substring Without Repeatation
+class Demo
+{
+	public static void main(String[] args) {
+		
+		String str = "abcdab";
+		int len = str.length();
+		
+		HashSet<Character> hs = new HashSet<>();
+		String overAllHighest="";
+		String currentHighest="";
+		System.out.println(Logic(str,hs,len,overAllHighest,currentHighest));
+	}
+
+	private static String Logic(String str, HashSet<Character> hs, int len, String overAllHighest,	String currentHighest) {
+		
+		for(int i=0;i<len;i++)
+		{
+			char ch = str.charAt(i);
+			
+			if(hs.contains(ch))
+			{
+				hs.clear();
+				currentHighest="";
+			}
+			currentHighest+=ch;
+			hs.add(ch);
+			
+			if(currentHighest.length()>overAllHighest.length())
+			{
+				overAllHighest=currentHighest;
+			}
+		}
+		
+		return overAllHighest;
+	}
+	
+}
+	----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    #Program 2 : Print Alternative Elements In An Array ?
+
+      package demo;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.stream.IntStream;
+
+// Print Alternative Elements In An Array
+class Demo
+{
+	public static void main(String[] args) {
+		int arr[]= {10,20,30,40,50};
+	
+		
+//		for(int i=0;i<len;i+=2)
+//		{
+//			System.out.print(arr[i]+" ");
+//		}
+		
+		IntStream.range(0, arr.length).filter(i->(i%2)==0).map(i->arr[i]).forEach(i->System.out.print(i+" "));
+	}
+	
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  #Program 3: Print Names In Sorted Order ?
+
+    package demo;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.stream.IntStream;
+
+// Print Alternative Elements In An Array
+class Demo
+{
+	public static void main(String[] args) {
+		String[] arr= {"Banana","Apple","Graphes"};
+		int len = arr.length;
+		
+		String temp;
+		for(int i=0;i<len;i++)
+		{
+			for(int j=i+1;j<len;j++)
+			{
+				if(arr[i].compareTo(arr[j])>0)
+				{
+					temp=arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+				}
+			}
+		}
+		
+		for (String newArr : arr) {
+			System.out.print(newArr+" ");
+		}
+	}
+	
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  #Program 4:
