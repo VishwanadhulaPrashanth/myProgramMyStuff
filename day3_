@@ -33,4 +33,35 @@ class Demo {
 }
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  #Program 2:
+  #Program 2: Find The Occurance Of Each Character In a String ?
+package demo;
+
+import java.util.HashMap;
+
+// Find The Occurance Of Each Character In a String ?
+class Demo {
+	public static void main(String[] args) {
+		
+		String str = "abcddcbae";
+		char[] arr = str.toCharArray();
+		
+		HashMap<Character, Integer> hm = new HashMap<>();
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			if(!hm.containsKey(arr[i]))
+			{
+				hm.put(arr[i], 1);
+			}
+			else
+			{
+				Integer val = hm.get(arr[i]);
+				hm.put(arr[i], val+1);
+			}
+		
+		}
+		System.out.println(hm);	
+	}
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Program 3 :
